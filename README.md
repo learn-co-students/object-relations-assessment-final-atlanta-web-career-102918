@@ -50,7 +50,7 @@ Do your best to follow Ruby best practices. For example, use higher-level array 
   - returns a `Review` instance.
 - `Viewer#reviewed_movies`
   - returns an array of `Movie` instances reviewed by the `Viewer` instance.
-- `Viewer#rated_movie?`
+- `Viewer#reviewed_movie?`
   - receives a `Movie` instance as its only argument;
   - returns `true` if the `Viewer` instance already has an association with the `Movie` instance.
 
