@@ -1,7 +1,7 @@
 # require and load the environment file
 require_relative '../config/environment.rb'
 
-# call this function instead of exiting and re-running this file
+# call this method to reload your models as you write code
 def reload
   load 'config/environment.rb'
 end
