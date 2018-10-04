@@ -30,7 +30,9 @@ Do your best to follow Ruby best practices. For example, use higher-level array 
 
 ### 1. `Review` model and relationships
 
-- `Review#initialize`
+- `Review#initialize(viewer, movie, rating)`
+  - `Viewer` instance, `Movie` instance, and rating are passed in as arguments
+  - the `Review` instance is added to list of all `Review` instances
 - `Review.all`
   - returns an array of all initialized `Review` instances
 - `Review#viewer`
@@ -45,13 +47,13 @@ Do your best to follow Ruby best practices. For example, use higher-level array 
 
 - `Viewer#reviews`
   - returns an array of `Review` instances associated with the `Viewer` instance.
-- `Viewer#add_review`
-  - receives a `Movie` instance as its only argument and adds it to the `Viewer` instance's list of reviewed movies;
+- `Viewer#add_review(movie)`
+  - `Movie` instance is passed in as its only argument and this method adds the `Movie` instance to the `Viewer` instance's list of reviewed movies;
   - returns a `Review` instance.
 - `Viewer#reviewed_movies`
   - returns an array of `Movie` instances reviewed by the `Viewer` instance.
 - `Viewer#reviewed_movie?`
-  - receives a `Movie` instance as its only argument;
+  - a `Movie` instance is passed in as its only argument;
   - returns `true` if the `Viewer` instance already has an association with the `Movie` instance.
 
 ### 3. Checkpoint
@@ -72,8 +74,8 @@ After testing all of your code up to this point, `git add` and `git commit` your
   - to average ratings, add all ratings together and divide by the total number of ratings.
 - `Movie.highest_rated`
   - returns the `Movie` instance with the highest average rating.
-- `Viewer#rate_movie`
-  - receives a `Movie` instance and a rating as arguments;
+- `Viewer#rate_movie(movie)`
+  - a `Movie` instance and a rating are passed in as arguments;
   - assigns the rating to the `Review` instance already associated with this `Viewer` instance and the passed `Movie` instance;
   - if the `Viewer` instance and the passed `Movie` instance are _not_ already associated, this method should create a new `Review` instance;
   - rating should be a number between 1 and 5, other values should not be allowed.
